@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Frame from './components/Frame/Frame';
+import Home from './containers/Home/Home';
 
 import './App.scss';
 
@@ -9,7 +10,7 @@ function App() {
 		<div className="app">
 
 			<Frame>
-
+				<Home/>
 			</Frame>
 
 		</div>
