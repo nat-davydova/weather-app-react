@@ -2,3 +2,15 @@
 
 @import "assets/scss/media-q"; //media queries screen sizes
 @import "assets/scss/mixins"; //mixins used in the project
+
+//app styles
+.app {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+
+	@media (min-width: $mobile-width) {
+		height: 100vh;
+	}
+}
