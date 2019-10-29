@@ -1,19 +1,42 @@
 import React, { Component, Fragment } from 'react';
 
-import Date from 'components/Date/Date';
+import CurrentDate from 'components/CurrentDate/Date';
 
 class Home extends Component{
 
-	state = {
-		date: null
+	constructor(props) {
+
+		super(props);
+
+		this.state = {
+			fullDate: new Date(),
+		};
+	}
+
+	dateTimeHandler = () => {
+
+		const day = this.state.fullDate.getDate();
+
+		this.setState({
+			currentDate: {
+				day: day
+			}
+		});
+
+		console.log(this.state);
+
 	};
+
+	componentDidMount() {
+		this.dateTimeHandler();
+	}
 
 	render() {
 
 		return(
 			<Fragment>
 
-				<Date day={27}
+				<CurrentDate day={27}
 					month={`Feb`}
 					year={2018}/>
 
