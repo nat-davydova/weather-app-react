@@ -3,13 +3,17 @@ import classnames from 'classnames';
 
 import Row from 'components/Miscellanious/Row/Row';
 import Col from 'components/Miscellanious/Col/Col';
+import Day from './Day/Day';
 
 const date = (props) => {
 
+	const { date } = props;
+
 	const dateClasses = classnames(
+		`date`,
 		`text-center`,
 		`d-flex`,
-		`justify-content-center`
+		`justify-content-center`,
 	);
 
 	return(
@@ -18,6 +22,8 @@ const date = (props) => {
 			<Col colWidth={12}>
 
 				<div className={dateClasses}>
+
+					<Day day={date}/>
 
 				</div>
 
