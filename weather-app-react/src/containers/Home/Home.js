@@ -10,7 +10,8 @@ class Home extends Component{
 			<Fragment>
 
 				<Date day={27}
-					month={`Feb`}/>
+					month={`Feb`}
+					year={2018}/>
 
 			</Fragment>
 		);
