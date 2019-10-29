@@ -5,7 +5,7 @@ import Home from './containers/Home/Home';
 
 import './App.scss';
 
-function App() {
+const App = () => {
 	return(
 		<div className="app">
 
