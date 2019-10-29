@@ -1,0 +1,7 @@
+.month {
+
+	//decoration symbol ','
+	&:after {
+		content: ',';
+	}
+}
