@@ -7,6 +7,7 @@ class Home extends Component{
 		return(
 			<Fragment>
 
+
 			</Fragment>
 		);
 	}
