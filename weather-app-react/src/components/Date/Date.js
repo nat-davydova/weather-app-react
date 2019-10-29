@@ -4,10 +4,11 @@ import classnames from 'classnames';
 import Row from 'components/Miscellanious/Row/Row';
 import Col from 'components/Miscellanious/Col/Col';
 import Day from './Day/Day';
+import Month from './Month/Month';
 
 const date = (props) => {
 
-	const { date } = props;
+	const { day, month } = props;
 
 	const dateClasses = classnames(
 		`date`,
@@ -23,7 +24,9 @@ const date = (props) => {
 
 				<div className={dateClasses}>
 
-					<Day day={date}/>
+					<Day day={day}/>
+
+					<Month month={month}/>
 
 				</div>
 

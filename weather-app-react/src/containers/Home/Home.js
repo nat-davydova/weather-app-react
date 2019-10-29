@@ -9,7 +9,8 @@ class Home extends Component{
 		return(
 			<Fragment>
 
-				<Date date={27}/>
+				<Date day={27}
+					month={`Feb`}/>
 
 			</Fragment>
 		);
