@@ -4,6 +4,10 @@ import Date from 'components/Date/Date';
 
 class Home extends Component{
 
+	state = {
+		date: null
+	};
+
 	render() {
 
 		return(
