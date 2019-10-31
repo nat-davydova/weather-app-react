@@ -14,8 +14,15 @@ class Home extends Component{
 		this.state = {
 			currentDate: {
 				day: fullDate.getDate(),
-				month: fullDate.toLocaleString('en-US', { month: 'short' }),
-				year: fullDate.getFullYear()
+				month: fullDate.toLocaleDateString('en-US', { month: 'short' }),
+				year: fullDate.getFullYear(),
+			},
+
+			currentTime: {
+				hours: fullDate.toLocaleTimeString('default',
+						{hour: '2-digit', hour12: false}
+					),
+				mins: fullDate.toLocaleTimeString('default', {minute: '2-digit'}),
 			}
 		};
 	}
@@ -26,10 +33,11 @@ class Home extends Component{
 			<Fragment>
 
 				<CurrentDate day={this.state.currentDate.day}
-					month={this.state.currentDate.month}
-					year={this.state.currentDate.year}/>
+							 month={this.state.currentDate.month}
+							 year={this.state.currentDate.year}/>
 
-				<CurrentTime hours={10} mins={25}/>
+				<CurrentTime hours={this.state.currentTime.hours}
+							 mins={this.state.currentTime.mins}/>
 
 			</Fragment>
 		);
