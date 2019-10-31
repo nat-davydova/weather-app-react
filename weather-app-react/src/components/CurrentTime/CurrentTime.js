@@ -3,8 +3,12 @@ import classnames from 'classnames';
 
 import Row from 'components/Miscellanious/Row/Row';
 import Col from 'components/Miscellanious/Col/Col';
+import Hours from './Hours/Hours';
+import Mins from './Mins/Mins';
 
 const currentTime = (props) => {
+
+	const { hours, mins } = props;
 
 	const timeClasses = classnames(
 		'time',
@@ -19,6 +23,10 @@ const currentTime = (props) => {
 			<Col colWidth={12}>
 
 				<div className={timeClasses}>
+
+					<Hours hours={hours}/>
+
+					<Mins hours={mins}/>
 
 				</div>
 
