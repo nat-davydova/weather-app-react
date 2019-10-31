@@ -4,6 +4,12 @@ import CurrentDate from 'components/CurrentDate/CurrentDate';
 import CurrentTime from 'components/CurrentTime/CurrentTime';
 import Location from 'components/Location/Location';
 
+const timeOptions = {
+	hour12 : false,
+	hour:  "2-digit",
+	minute: "2-digit",
+};
+
 class Home extends Component{
 
 	constructor(props) {
@@ -11,6 +17,8 @@ class Home extends Component{
 		super(props);
 
 		const fullDate = new Date();
+
+		const time = fullDate.toLocaleTimeString('default', timeOptions).split(':');
 
 		this.state = {
 			currentDate: {
@@ -20,10 +28,8 @@ class Home extends Component{
 			},
 
 			currentTime: {
-				hours: fullDate.toLocaleTimeString('default',
-						{hour: '2-digit', hour12: false}
-					),
-				mins: fullDate.toLocaleTimeString('default', {minute: '2-digit'}),
+				hours: time[0],
+				mins: time[1],
 			}
 		};
 	}
