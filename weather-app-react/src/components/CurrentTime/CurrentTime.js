@@ -6,12 +6,14 @@ import Col from 'components/Miscellanious/Col/Col';
 import Hours from './Hours/Hours';
 import Mins from './Mins/Mins';
 
+import classes from './CurrentTime.module.scss';
+
 const currentTime = (props) => {
 
 	const { hours, mins } = props;
 
 	const timeClasses = classnames(
-		'time',
+		classes.time,
 		'd-flex',
 		'justify-content-center',
 		'mt-2',
@@ -26,7 +28,7 @@ const currentTime = (props) => {
 
 					<Hours hours={hours}/>
 
-					<Mins hours={mins}/>
+					<Mins mins={mins}/>
 
 				</div>
 

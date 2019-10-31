@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
 import CurrentDate from 'components/CurrentDate/CurrentDate';
+import CurrentTime from 'components/CurrentTime/CurrentTime';
 
 class Home extends Component{
 
@@ -27,6 +28,8 @@ class Home extends Component{
 				<CurrentDate day={this.state.currentDate.day}
 					month={this.state.currentDate.month}
 					year={this.state.currentDate.year}/>
+
+				<CurrentTime hours={10} mins={25}/>
 
 			</Fragment>
 		);

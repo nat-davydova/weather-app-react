@@ -4,6 +4,8 @@ const mins = (props) => {
 
 	const { mins } = props;
 
+	console.log(mins);
+
 	return <div className="mins">{mins}</div>;
 
 };
