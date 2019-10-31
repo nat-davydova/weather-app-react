@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 import CurrentDate from 'components/CurrentDate/CurrentDate';
 import CurrentTime from 'components/CurrentTime/CurrentTime';
+import Location from 'components/Location/Location';
 
 class Home extends Component{
 
@@ -38,6 +39,8 @@ class Home extends Component{
 
 				<CurrentTime hours={this.state.currentTime.hours}
 							 mins={this.state.currentTime.mins}/>
+
+				 <Location/>
 
 			</Fragment>
 		);
