@@ -8,27 +8,17 @@ class Home extends Component{
 
 		super(props);
 
+		const fullDate = new Date();
+
 		this.state = {
-			fullDate: new Date(),
-		};
-	}
-
-	dateTimeHandler = () => {
-
-		const day = this.state.fullDate.getDate();
-
-		this.setState({
 			currentDate: {
-				day: day
+				day: fullDate.getDate(),
+				month: fullDate.toLocaleString('en-US', { month: 'short' }),
+				year: fullDate.getFullYear()
 			}
-		});
+		};
 
 		console.log(this.state);
-
-	};
-
-	componentDidMount() {
-		this.dateTimeHandler();
 	}
 
 	render() {
@@ -36,9 +26,9 @@ class Home extends Component{
 		return(
 			<Fragment>
 
-				<CurrentDate day={27}
-					month={`Feb`}
-					year={2018}/>
+				<CurrentDate day={this.state.currentDate.day}
+					month={this.state.currentDate.month}
+					year={this.state.currentDate.year}/>
 
 			</Fragment>
 		);
