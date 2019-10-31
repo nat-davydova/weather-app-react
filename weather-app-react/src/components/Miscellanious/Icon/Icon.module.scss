@@ -4,6 +4,7 @@ $icon--md: 80px;
 $icon--lg: 150px;
 
 .icon {
+	display: inline-block;
 
 	svg {
 		width: 100%;

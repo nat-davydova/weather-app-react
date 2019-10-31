@@ -23,9 +23,12 @@ const location = (props) => {
 
 				<div className={locationClasses}>
 
-					<Icon size={'sm'}>
-						<LocationIcon/>
-					</Icon>
+					<div className="text-success">
+						<Icon size={'sm'}>
+							<LocationIcon/>
+						</Icon>
+					</div>
+
 
 				</div>
 
