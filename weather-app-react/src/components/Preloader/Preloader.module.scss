@@ -1,0 +1,16 @@
+//rotation keyframes
+@keyframes preloader {
+	0% {
+		transform: rotate(90deg);
+	}
+
+	100% {
+		transform: rotate(450deg);
+	}
+}
+
+.preloader {
+	transform: rotate(95deg);
+
+	animation: preloader 1s cubic-bezier(0.04, 1.01, 1, 1) infinite;
+}
