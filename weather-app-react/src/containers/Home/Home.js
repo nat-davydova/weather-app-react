@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import CurrentDate from 'components/CurrentDate/Date';
+import CurrentDate from 'components/CurrentDate/CurrentDate';
 
 class Home extends Component{
 
@@ -17,8 +17,6 @@ class Home extends Component{
 				year: fullDate.getFullYear()
 			}
 		};
-
-		console.log(this.state);
 	}
 
 	render() {

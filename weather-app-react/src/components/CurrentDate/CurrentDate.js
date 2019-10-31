@@ -7,7 +7,7 @@ import Day from './Day/Day';
 import Month from './Month/Month';
 import Year from './Year/Year';
 
-const date = (props) => {
+const currentDate = (props) => {
 
 	const { day, month, year } = props;
 
@@ -40,4 +40,4 @@ const date = (props) => {
 
 };
 
-export default date;
+export default currentDate;
