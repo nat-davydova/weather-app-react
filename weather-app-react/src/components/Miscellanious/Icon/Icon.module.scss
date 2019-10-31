@@ -1,0 +1,18 @@
+//variables
+$icon--sm: 30px;
+$icon--md: 80px;
+$icon--lg: 150px;
+
+.icon {
+
+	svg {
+		width: 100%;
+		height: 100%;
+		fill: currentColor;
+	}
+}
+
+.icon--sm {
+	width: $icon--sm;
+	height: $icon--sm;
+}
