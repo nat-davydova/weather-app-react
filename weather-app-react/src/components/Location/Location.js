@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import Row from 'components/Miscellanious/Row/Row';
 import Col from 'components/Miscellanious/Col/Col';
 import Icon from 'components/Miscellanious/Icon/Icon';
+import Preloader from 'components/Preloader/Preloader';
 
 import { ReactComponent as LocationIcon } from 'assets/img/icons/map-marker.svg';
 
@@ -29,6 +30,9 @@ const location = (props) => {
 						</Icon>
 					</div>
 
+					<div className="text-success">
+						<Preloader iconSize={'sm'}/>
+					</div>
 
 				</div>
 
