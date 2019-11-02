@@ -10,11 +10,15 @@ import { ReactComponent as LocationIcon } from 'assets/img/icons/map-marker.svg'
 
 const location = (props) => {
 
+	const { location } = props;
+
 	const locationClasses = classnames(
 		'd-flex',
 		'justify-content-center',
 		'align-items-center',
-		'flex-wrap'
+		'flex-wrap',
+		'mt-2',
+		'mt-sm-4'
 	);
 
 	return(
