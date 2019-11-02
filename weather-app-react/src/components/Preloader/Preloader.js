@@ -7,12 +7,12 @@ import classes from './Preloader.module.scss';
 
 const preloader = (props) => {
 
-	const { iconSize } = props;
+	const { iconSize, color } = props;
 
 	return (
 
 		<div className={classes.preloader}>
-			<Icon size={iconSize}>
+			<Icon size={iconSize} color={color}>
 				<LoaderIcon/>
 			</Icon>
 		</div>

@@ -5,11 +5,12 @@ import classes from './Icon.module.scss';
 
 const icon = (props) => {
 
-	const { size, children } = props;
+	const { size, children, color } = props;
 
 	const iconClasses = classnames(
 		classes.icon,
-		classes[`icon--${size}`]
+		classes[`icon--${size}`],
+		`${color}`
 	);
 
 	return(

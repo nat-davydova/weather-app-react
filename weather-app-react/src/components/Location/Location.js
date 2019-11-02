@@ -29,11 +29,11 @@ const location = (props) => {
 
 				<div className={locationClasses}>
 
-					<Icon size={'sm'}>
+					<Icon size={'sm'} color={'text-success'}>
 						<LocationIcon/>
 					</Icon>
 
-					{ location ? <Content/> : <Preloader iconSize={`sm`}/> }
+					{ location ? <Content/> : <Preloader iconSize={`sm`} color={'text-success'}/> }
 
 				</div>
 
