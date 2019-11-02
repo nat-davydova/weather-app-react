@@ -6,6 +6,7 @@ import { mapApi } from "../../configs/apiKeys";
 import CurrentDate from 'components/CurrentDate/CurrentDate';
 import CurrentTime from 'components/CurrentTime/CurrentTime';
 import Location from 'components/Location/Location';
+import Weather from 'components/Weather/Weather';
 
 const timeOptions = {
 	hour12 : false,
@@ -118,6 +119,8 @@ class Home extends Component{
 
 				 <Location location={this.state.location.place ? this.state.location.place : this.state.location.locationError}
 						   error={this.state.location.locationError}/>
+
+			   <Weather/>
 
 			</Fragment>
 		);
