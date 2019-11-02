@@ -120,7 +120,7 @@ class Home extends Component{
 				 <Location location={this.state.location.place ? this.state.location.place : this.state.location.locationError}
 						   error={this.state.location.locationError}/>
 
-			   <Weather/>
+			   <Weather weatherType="Mist"/>
 
 			</Fragment>
 		);

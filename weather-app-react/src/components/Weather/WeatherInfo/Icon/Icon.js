@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 
 import { ReactComponent as MistIcon } from 'assets/img/weather/mist.svg';
 
