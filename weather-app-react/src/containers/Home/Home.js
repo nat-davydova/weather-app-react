@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import axios from 'axios';
+import axios from 'interceptors/axios-location';
 
 import { mapApi } from "../../configs/apiKeys";
 
@@ -11,10 +11,6 @@ const timeOptions = {
 	hour12 : false,
 	hour:  "2-digit",
 	minute: "2-digit",
-};
-
-const apiURL = {
-	mapUrl: `https://eu1.locationiq.com/v1/reverse.php`
 };
 
 //promise for HTML5 Geolocation API
@@ -66,7 +62,7 @@ class Home extends Component{
 
 			const { latitude, longitude } = coords;
 
-			const placeObj = await axios (`${apiURL.mapUrl}?key=${mapApi}&lat=${latitude}&lon=${longitude}&format=json`);
+			const placeObj = await axios (`?key=${mapApi}&lat=${latitude}&lon=${longitude}&format=json`);
 
 			const { state, country } = placeObj.data.address;
 
