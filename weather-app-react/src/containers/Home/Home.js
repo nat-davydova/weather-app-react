@@ -52,37 +52,53 @@ class Home extends Component{
 			location: {
 				lat: null,
 				long: null,
-				place: null
+				place: null,
+				locationError: null
 			}
 		};
 	};
 
-	getLoaction = async () => {
+	getLocation = async () => {
 
-		const { coords } = await getCoords();
+		try {
 
-		const { latitude, longitude } = coords;
+			const { coords } = await getCoords();
 
-		const placeObj = await axios (`${apiURL.mapUrl}?key=${mapApi}&lat=${latitude}&lon=${longitude}&format=json`);
+			const { latitude, longitude } = coords;
 
-		const { state, country } = placeObj.data.address;
+			const placeObj = await axios (`${apiURL.mapUrl}?key=${mapApi}&lat=${latitude}&lon=${longitude}&format=json`);
 
-		const place = `${state}, ${country}`;
+			const { state, country } = placeObj.data.address;
 
-		this.setState({
-			location: {
-				...this.state.location,
-				long: longitude,
-				lat: latitude,
-				place: place
-			}
-		});
+			const place = `${state}, ${country}`;
+
+			this.setState({
+				location: {
+					...this.state.location,
+					long: longitude,
+					lat: latitude,
+					place: place
+				}
+			});
+
+		} catch (e) {
+			console.log(e);
+
+			this.setState({
+				location: {
+					...this.state.location,
+					locationError: `We can't define your location, sorry :(`
+				}
+			});
+
+
+		}
 
 	};
 
 	initApp = async () => {
 
-		await this.getLoaction();
+		await this.getLocation();
 
 	};
 
@@ -104,7 +120,7 @@ class Home extends Component{
 				<CurrentTime hours={this.state.currentTime.hours}
 							 mins={this.state.currentTime.mins}/>
 
-				 <Location location={this.state.location.place}/>
+				 <Location location={this.state.location.place ? this.state.location.place : this.state.location.locationError}/>
 
 			</Fragment>
 		);
