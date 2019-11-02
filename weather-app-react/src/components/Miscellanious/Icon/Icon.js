@@ -10,7 +10,10 @@ const icon = (props) => {
 	const iconClasses = classnames(
 		classes.icon,
 		classes[`icon--${size}`],
-		`${color}`
+		{
+			[`${color}`]: color
+		}
+
 	);
 
 	return(
