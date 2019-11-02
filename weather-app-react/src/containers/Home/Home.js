@@ -44,7 +44,8 @@ class Home extends Component{
 
 			location: {
 				lat: null,
-				long: null
+				long: null,
+				place: null
 			}
 		};
 	};
@@ -55,11 +56,18 @@ class Home extends Component{
 
 		const { latitude, longitude } = coords;
 
+		const placeObj = await axios (`https://eu1.locationiq.com/v1/reverse.php?key=5ec785d2097b2d&lat=${latitude}&lon=${longitude}&format=json`);
+
+		const { state, country } = placeObj.data.address;
+
+		const place = `${state}, ${country}`;
+
 		this.setState({
 			location: {
 				...this.state.location,
 				long: longitude,
-				lat: latitude
+				lat: latitude,
+				place: place
 			}
 		});
 
@@ -79,7 +87,7 @@ class Home extends Component{
 				<CurrentTime hours={this.state.currentTime.hours}
 							 mins={this.state.currentTime.mins}/>
 
-				 {/*<Location location={this.state.location}/>*/}
+				 <Location location={this.state.location.place}/>
 
 			</Fragment>
 		);
