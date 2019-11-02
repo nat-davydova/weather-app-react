@@ -1,3 +1,5 @@
+@import "assets/scss/media-q";
+
 //variables
 $icon--sm: 30px;
 $icon--md: 80px;
@@ -16,4 +18,19 @@ $icon--lg: 150px;
 .icon--sm {
 	width: $icon--sm;
 	height: $icon--sm;
+}
+
+.icon--md {
+	width: $icon--md;
+	height: $icon--md;
+}
+
+.icon--lg {
+	width: ($icon--lg * .7);
+	height: ($icon--lg * .7);
+
+	@media (min-width: $mobile-width) {
+		width: $icon--lg;
+		height: $icon--lg;
+	}
 }
