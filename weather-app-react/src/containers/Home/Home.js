@@ -116,7 +116,8 @@ class Home extends Component{
 				<CurrentTime hours={this.state.currentTime.hours}
 							 mins={this.state.currentTime.mins}/>
 
-				 <Location location={this.state.location.place ? this.state.location.place : this.state.location.locationError}/>
+				 <Location location={this.state.location.place ? this.state.location.place : this.state.location.locationError}
+						   error={this.state.location.locationError}/>
 
 			</Fragment>
 		);

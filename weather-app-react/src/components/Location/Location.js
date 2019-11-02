@@ -11,7 +11,7 @@ import { ReactComponent as LocationIcon } from 'assets/img/icons/map-marker.svg'
 
 const location = (props) => {
 
-	const { location } = props;
+	const { location, error } = props;
 
 	const locationClasses = classnames(
 		'd-flex',
@@ -33,7 +33,7 @@ const location = (props) => {
 						<LocationIcon/>
 					</Icon>
 
-					{ location ? <Content location={location}/> : <Preloader iconSize={`sm`} color={'text-success'}/> }
+					{ location ? <Content location={location} error={error} /> : <Preloader iconSize={`sm`} color={'text-success'}/> }
 
 				</div>
 
