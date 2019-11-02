@@ -37,6 +37,7 @@ class Home extends Component{
 		const time = fullDate.toLocaleTimeString('default', timeOptions).split(':');
 
 		this.state = {
+
 			currentDate: {
 				day: fullDate.getDate(),
 				month: fullDate.toLocaleDateString('en-US', { month: 'short' }),
@@ -56,7 +57,7 @@ class Home extends Component{
 		};
 	};
 
-	async componentDidMount() {
+	getLoaction = async () => {
 
 		const { coords } = await getCoords();
 
@@ -77,7 +78,17 @@ class Home extends Component{
 			}
 		});
 
-		console.log(this.state);
+	};
+
+	initApp = async () => {
+
+		await this.getLoaction();
+
+	};
+
+	async componentDidMount() {
+
+		await this.initApp();
 
 	}
 
