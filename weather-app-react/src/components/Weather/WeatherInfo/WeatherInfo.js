@@ -10,7 +10,7 @@ const weatherInfo = (props) => {
 	return(
 		<Fragment>
 
-			<Icon/>
+			<Icon weatherType={weatherType}/>
 
 			<Title weatherType={weatherType}/>
 
