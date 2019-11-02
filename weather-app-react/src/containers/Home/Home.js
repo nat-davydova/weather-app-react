@@ -42,7 +42,10 @@ class Home extends Component{
 				mins: time[1],
 			},
 
-			location: null
+			location: {
+				lat: null,
+				long: null
+			}
 		};
 	};
 
@@ -50,7 +53,17 @@ class Home extends Component{
 
 		const { coords } = await getCoords();
 
-		console.log(coords);
+		const { latitude, longitude } = coords;
+
+		this.setState({
+			location: {
+				...this.state.location,
+				long: longitude,
+				lat: latitude
+			}
+		});
+
+		console.log(this.state);
 
 	}
 
@@ -66,7 +79,7 @@ class Home extends Component{
 				<CurrentTime hours={this.state.currentTime.hours}
 							 mins={this.state.currentTime.mins}/>
 
-				 <Location location={this.state.location}/>
+				 {/*<Location location={this.state.location}/>*/}
 
 			</Fragment>
 		);
