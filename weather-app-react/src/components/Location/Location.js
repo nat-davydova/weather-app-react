@@ -33,7 +33,7 @@ const location = (props) => {
 						<LocationIcon/>
 					</Icon>
 
-					{ location ? <Content/> : <Preloader iconSize={`sm`} color={'text-success'}/> }
+					{ location ? <Content location={location}/> : <Preloader iconSize={`sm`} color={'text-success'}/> }
 
 				</div>
 

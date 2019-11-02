@@ -30,7 +30,9 @@ class Home extends Component{
 			currentTime: {
 				hours: time[0],
 				mins: time[1],
-			}
+			},
+
+			location: null
 		};
 	}
 
@@ -46,7 +48,7 @@ class Home extends Component{
 				<CurrentTime hours={this.state.currentTime.hours}
 							 mins={this.state.currentTime.mins}/>
 
-				 <Location/>
+				 <Location location={this.state.location}/>
 
 			</Fragment>
 		);
