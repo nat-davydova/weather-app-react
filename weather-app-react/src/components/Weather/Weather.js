@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import Row from 'components/Miscellanious/Row/Row';
 import Col from 'components/Miscellanious/Col/Col';
 import Preloader from 'components/Preloader/Preloader';
+import WeatherInfo from './weatherInfo/weatherInfo';
 
 const weather = (props) => {
 
@@ -21,7 +22,9 @@ const weather = (props) => {
 			<Col colWidth={12}>
 				<div className={weatherClasses}>
 
-					{weather ? null : <Preloader iconSize={`md`} color={`text-success`}/>}
+					<WeatherInfo/>
+
+					{/*{weather ? null : <Preloader iconSize={`md`} color={`text-success`}/>}*/}
 
 				</div>
 			</Col>

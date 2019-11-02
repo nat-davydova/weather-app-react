@@ -13,8 +13,6 @@ const content = (props) => {
 		}
 	);
 
-	console.log(error);
-
 	return (
 		<div className={locationClasses}>{location}</div>
 	);
