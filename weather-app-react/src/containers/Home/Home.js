@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import axios from 'axios';
 
 import CurrentDate from 'components/CurrentDate/CurrentDate';
 import CurrentTime from 'components/CurrentTime/CurrentTime';
@@ -8,6 +9,15 @@ const timeOptions = {
 	hour12 : false,
 	hour:  "2-digit",
 	minute: "2-digit",
+};
+
+//promise for HTML5 Geolocation API
+const getCoords = () => {
+
+	return new Promise(function(resolve, reject) {
+		navigator.geolocation.getCurrentPosition(resolve, reject);
+	});
+
 };
 
 class Home extends Component{
@@ -34,6 +44,14 @@ class Home extends Component{
 
 			location: null
 		};
+	};
+
+	async componentDidMount() {
+
+		const { coords } = await getCoords();
+
+		console.log(coords);
+
 	}
 
 	render() {
