@@ -1,0 +1,14 @@
+@import "assets/scss/media-q";
+
+.details_list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	grid-gap: 10px 15px;
+	justify-items: center;
+
+	list-style-type: none;
+
+	@media (min-width: $mobile-width) {
+		justify-items: left;
+	}
+}
