@@ -103,6 +103,21 @@ class Home extends Component{
 			const weatherCast = await axiosWeather(`?lat=${lat}&lon=${long}&APPID=${weatherApi}&units=metric`);
 
 			console.log(weatherCast);
+
+			const { wind, main: baseInfo, weather, sys: time } = weatherCast.data;
+
+			this.setState({
+				weather: {
+					...this.state.weather,
+					id: weather[0].id,
+					humidity: baseInfo.humidity,
+					pressure: baseInfo.pressure,
+					sunrise: time.sunrise,
+					sunset: time.sunset,
+					temp: Math.round(baseInfo.temp),
+					wind: wind.speed,
+				}
+			});
 			
 		} catch (e) {
 
