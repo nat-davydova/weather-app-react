@@ -60,12 +60,12 @@ const icon = (props) => {
 
 	const { weatherType, localHours } = props;
 
-	//const weather = weatherTypeFormat(weatherType, localHours, 8, 17);
+	const weather = weatherTypeFormat(weatherType, localHours, 8, 17);
 
 	return(
 
 		<Icon size={'lg'}>
-			{/*{weatherIcons[weather] || weatherIcons.default}*/}
+			{weatherIcons[weather] || weatherIcons.default}
 		</Icon>
 
 	);
