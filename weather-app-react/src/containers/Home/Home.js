@@ -94,26 +94,24 @@ class Home extends Component{
 
 			const weatherCast = await axiosWeather(`?lat=${lat}&lon=${long}&APPID=${weatherApi}&units=metric`);
 
-			console.log(weatherCast);
-
 			const { wind, main: baseInfo, weather, sys: time } = weatherCast.data;
 
 			this.setState({
 				weather: {
-					...this.state.weather,
-					id: weather[0].id,
-					humidity: baseInfo.humidity,
-					pressure: baseInfo.pressure,
-					sunrise: time.sunrise,
-					sunset: time.sunset,
-					temp: Math.round(baseInfo.temp),
-					wind: wind.speed,
+
+					details: {
+						id: weather[0].id,
+						humidity: baseInfo.humidity,
+						pressure: baseInfo.pressure,
+						sunrise: time.sunrise,
+						sunset: time.sunset,
+						temp: Math.round(baseInfo.temp),
+						wind: wind.speed,
+					}
 				}
 			});
 			
 		} catch (e) {
-
-			console.log(e);
 
 			this.setState({
 				weather: {
@@ -122,8 +120,6 @@ class Home extends Component{
 			});
 
 		}
-
-		console.log(this.state.weather);
 		
 	};
 
@@ -156,7 +152,8 @@ class Home extends Component{
 						   error={this.state.location.locationError}/>
 
 			   <Weather localHours={this.state.currentTime.hours}
-						weatherType="Clear Sky"/>
+						weatherDetails={this.state.weather.details}
+						error={this.state.weather.weatherError}/>
 
 			</Fragment>
 		);

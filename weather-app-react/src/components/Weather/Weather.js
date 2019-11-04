@@ -8,7 +8,7 @@ import WeatherInfo from './WeatherInfo/WeatherInfo';
 
 const weather = (props) => {
 
-	const { weatherType, localHours } = props;
+	const { weatherDetails, localHours, error } = props;
 
 	const weatherClasses = classnames(
 		'mt-3',
@@ -18,15 +18,16 @@ const weather = (props) => {
 		'align-items-center'
 	);
 
+	const weatherInfo = <WeatherInfo localHours={localHours}
+									 weatherDetails={weatherDetails}
+									 error={error}/>;
+
 	return(
 		<Row>
 			<Col colWidth={12}>
 				<div className={weatherClasses}>
 
-					<WeatherInfo localHours={localHours}
-								 weatherType={weatherType}/>
-
-					{/*{weather ? null : <Preloader iconSize={`md`} color={`text-success`}/>}*/}
+					{weatherDetails ? weatherInfo : <Preloader iconSize={`md`} color={`text-success`}/>}
 
 				</div>
 			</Col>
