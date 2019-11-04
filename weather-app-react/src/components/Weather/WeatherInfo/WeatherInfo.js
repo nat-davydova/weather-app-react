@@ -5,15 +5,12 @@ import Title from './Title/Title';
 
 const weatherInfo = (props) => {
 
-	const { weatherType, localHours } = props;
+	const { error, weatherType, localHours } = props;
 
 	return(
 		<Fragment>
 
-			<Icon localHours={localHours}
-				  weatherType={weatherType}/>
 
-			<Title weatherType={weatherType}/>
 
 		</Fragment>
 	);

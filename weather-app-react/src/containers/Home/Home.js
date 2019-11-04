@@ -152,6 +152,7 @@ class Home extends Component{
 						   error={this.state.location.locationError}/>
 
 			   <Weather localHours={this.state.currentTime.hours}
+						weatherContent={this.state.weather.details || this.state.weather.weatherError}
 						weatherDetails={this.state.weather.details}
 						error={this.state.weather.weatherError}/>
 

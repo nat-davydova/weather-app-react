@@ -8,7 +8,7 @@ import WeatherInfo from './WeatherInfo/WeatherInfo';
 
 const weather = (props) => {
 
-	const { weatherDetails, localHours, error } = props;
+	const { weatherContent, localHours, error } = props;
 
 	const weatherClasses = classnames(
 		'mt-3',
@@ -19,7 +19,7 @@ const weather = (props) => {
 	);
 
 	const weatherInfo = <WeatherInfo localHours={localHours}
-									 weatherDetails={weatherDetails}
+									 weatherContent={weatherContent}
 									 error={error}/>;
 
 	return(
@@ -27,7 +27,7 @@ const weather = (props) => {
 			<Col colWidth={12}>
 				<div className={weatherClasses}>
 
-					{weatherDetails ? weatherInfo : <Preloader iconSize={`md`} color={`text-success`}/>}
+					{weatherContent ? weatherInfo : <Preloader iconSize={`md`} color={`text-success`}/>}
 
 				</div>
 			</Col>
