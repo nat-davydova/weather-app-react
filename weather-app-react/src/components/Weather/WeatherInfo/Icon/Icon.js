@@ -17,19 +17,19 @@ import { ReactComponent as ThunderstormIcon } from 'assets/img/weather/thunderst
 
 //weather icons set
 const weatherIcons = {
-	brokenClouds: BrokenCloudsIcon,
-	clearSky: ClearSkyIcon,
-	clearSkyNight: ClearSkyNightIcon,
-	default: ThermometerIcon,
-	fewClouds: FewCloudsIcon,
-	fewCloudsNight: FewCloudsNightIcon,
-	fog: MistIcon,
-	mist: MistIcon,
-	rain: RainIcon,
-	scatteredClouds: ScatteredCloudsIcon,
-	showerRain: ShowerRainIcon,
-	snow: SnowIcon,
-	thunderstorm: ThunderstormIcon,
+	brokenClouds: <BrokenCloudsIcon/>,
+	clearSky: <ClearSkyIcon/>,
+	clearSkyNight: <ClearSkyNightIcon/>,
+	default: <ThermometerIcon />,
+	fewClouds: <FewCloudsIcon/>,
+	fewCloudsNight: <FewCloudsNightIcon/>,
+	fog: <MistIcon/>,
+	mist: <MistIcon/>,
+	rain: <RainIcon/>,
+	scatteredClouds: <ScatteredCloudsIcon/>,
+	showerRain: <ShowerRainIcon/>,
+	snow: <SnowIcon/>,
+	thunderstorm: <ThunderstormIcon/>,
 };
 
 const weatherTypeFormat = (weather, localHours, sunrise, sunset) => {
@@ -60,14 +60,12 @@ const icon = (props) => {
 
 	const { weatherType } = props;
 
-	const weather = weatherTypeFormat(weatherType, 11, 8, 17);
-
-	console.log(weather);
+	const weather = weatherTypeFormat(weatherType, 5, 8, 17);
 
 	return(
 
 		<Icon size={'lg'}>
-			<MistIcon/>
+			{weatherIcons[weather] || weatherIcons.default}
 		</Icon>
 
 	);
