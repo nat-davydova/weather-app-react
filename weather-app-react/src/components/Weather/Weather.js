@@ -8,7 +8,7 @@ import WeatherInfo from './WeatherInfo/WeatherInfo';
 
 const weather = (props) => {
 
-	const { weatherContent, localHours, error } = props;
+	const { weatherContent, weatherDetails, localHours, error } = props;
 
 	const weatherClasses = classnames(
 		'mt-3',
@@ -19,7 +19,7 @@ const weather = (props) => {
 	);
 
 	const weatherInfo = <WeatherInfo localHours={localHours}
-									 weatherContent={weatherContent}
+									 weatherDetails={weatherDetails}
 									 error={error}/>;
 
 	return(
