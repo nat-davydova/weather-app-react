@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import axios from 'interceptors/axios-location';
+import axiosLocation from 'interceptors/axios-location';
+import axiosWeather from 'interceptors/axios-weather';
 
-import { mapApi } from "../../configs/apiKeys";
+import { mapApi, weatherApi } from "../../configs/apiKeys";
 
 import CurrentDate from 'components/CurrentDate/CurrentDate';
 import CurrentTime from 'components/CurrentTime/CurrentTime';
@@ -51,7 +52,9 @@ class Home extends Component{
 				long: null,
 				place: null,
 				locationError: null
-			}
+			},
+
+			weather: {}
 		};
 	};
 
@@ -63,7 +66,7 @@ class Home extends Component{
 
 			const { latitude, longitude } = coords;
 
-			const placeObj = await axios (`?key=${mapApi}&lat=${latitude}&lon=${longitude}&format=json`);
+			const placeObj = await axiosLocation (`?key=${mapApi}&lat=${latitude}&lon=${longitude}&format=json`);
 
 			const { state, country } = placeObj.data.address;
 
@@ -93,9 +96,24 @@ class Home extends Component{
 
 	};
 
+	getWeather = async (lat, long) => {
+		
+		try {
+
+			const weatherCast = await axiosWeather(`?lat=${lat}&lon=${long}&APPID=${weatherApi}&units=metric`);
+
+			console.log(weatherCast);
+			
+		} catch (e) {
+
+		}
+		
+	};
+
 	initApp = async () => {
 
 		await this.getLocation();
+		await this.getWeather(this.state.location.lat, this.state.location.long);
 
 	};
 
@@ -120,7 +138,7 @@ class Home extends Component{
 				 <Location location={this.state.location.place ? this.state.location.place : this.state.location.locationError}
 						   error={this.state.location.locationError}/>
 
-			   <Weather localHours={this.state.currentTime.hours} 
+			   <Weather localHours={this.state.currentTime.hours}
 						weatherType="Clear Sky"/>
 
 			</Fragment>
