@@ -47,13 +47,7 @@ class Home extends Component{
 				mins: time[1],
 			},
 
-			location: {
-				lat: null,
-				long: null,
-				place: null,
-				locationError: null
-			},
-
+			location: {},
 			weather: {}
 		};
 	};
@@ -74,7 +68,6 @@ class Home extends Component{
 
 			this.setState({
 				location: {
-					...this.state.location,
 					long: longitude,
 					lat: latitude,
 					place: place
@@ -86,7 +79,6 @@ class Home extends Component{
 
 			this.setState({
 				location: {
-					...this.state.location,
 					locationError: `We can't define your location, sorry :(`
 				}
 			});
@@ -121,7 +113,17 @@ class Home extends Component{
 			
 		} catch (e) {
 
+			console.log(e);
+
+			this.setState({
+				weather: {
+					weatherError: `We can't define your weather, sorry :(`
+				}
+			});
+
 		}
+
+		console.log(this.state.weather);
 		
 	};
 
