@@ -92,7 +92,7 @@ class Home extends Component{
 		
 		try {
 
-			const weatherCast = await axiosWeather(`?lat=${lat}&lon=${long}&APPID=${weatherApi}&units=metric`);
+			const weatherCast = await axiosWeather(`?lat=${lat}&lon=${long}&APPdddID=${weatherApi}&units=metric`);
 
 			const { wind, main: baseInfo, weather, sys: time } = weatherCast.data;
 
@@ -120,6 +120,8 @@ class Home extends Component{
 			});
 
 		}
+
+		console.log(this.state.weather);
 		
 	};
 
