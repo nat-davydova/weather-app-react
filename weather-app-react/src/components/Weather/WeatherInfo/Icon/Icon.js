@@ -32,9 +32,37 @@ const weatherIcons = {
 	thunderstorm: ThunderstormIcon,
 };
 
+const weatherTypeFormat = (weather, localHours, sunrise, sunset) => {
+
+	//day or night icon
+	if((weather === 'Clear Sky' || weather === 'Few Clouds') && (localHours < sunrise || localHours > sunset)) {
+		weather += ' Night'
+	}
+
+	//icon name formatting
+	const weatherArr = weather.split(' ');
+
+	let newWeatherArr = weatherArr.map((elem, index) => {
+
+		if(index > 0) {
+			return elem.charAt(0).toUpperCase() + elem.slice(1);
+		} else {
+			return elem.toLowerCase();
+		}
+
+	});
+
+	return newWeatherArr.join('');
+
+};
+
 const icon = (props) => {
 
 	const { weatherType } = props;
+
+	const weather = weatherTypeFormat(weatherType, 11, 8, 17);
+
+	console.log(weather);
 
 	return(
 
