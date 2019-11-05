@@ -32,7 +32,9 @@ const details = (props) => {
 
 	for (let [title, measure] of Object.entries(detailsMeasurements)) {
 
-		let arrayItem = <Detail title={title} measure={measure} value={details[title]}/>;
+		let newTitle = title.charAt(0).toUpperCase() + title.slice(1);
+
+		let arrayItem = <Detail title={newTitle} measure={measure} value={details[title]}/>;
 
 		detailsArr.push(arrayItem);
 	}
