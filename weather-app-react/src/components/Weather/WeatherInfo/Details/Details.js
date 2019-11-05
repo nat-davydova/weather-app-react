@@ -18,8 +18,6 @@ const details = (props) => {
 
 	const { details } = props;
 
-	const { humidity, pressure, sunrise, sunset, temp, wind } = details;
-
 	const detailsListClasses = classnames(
 		classes.details_list,
 		'p-0'
@@ -29,7 +27,7 @@ const details = (props) => {
 
 	for (let [title, measure] of Object.entries(detailsMeasurements)) {
 
-		let arrayItem = <Detail title={title} measure={measure}/>;
+		let arrayItem = <Detail title={title} measure={measure} value={details[title]}/>;
 
 		detailsArr.push(arrayItem);
 	}
