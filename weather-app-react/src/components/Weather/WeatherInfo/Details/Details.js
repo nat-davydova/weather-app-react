@@ -1,6 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
 
+import Detail from './Detail/Detail';
+
 import classes from './Details.module.scss';
 
 const detailsMeasurements = {
@@ -23,10 +25,19 @@ const details = (props) => {
 		'p-0'
 	);
 
+	const detailsArr = [];
+
+	for (let [title, measure] of Object.entries(detailsMeasurements)) {
+
+		let arrayItem = <Detail title={title} measure={measure}/>;
+
+		detailsArr.push(arrayItem);
+	}
+
 	return(
 		<div className="mt-4">
 			<ul className={detailsListClasses}>
-
+				{detailsArr}
 			</ul>
 		</div>
 	);
