@@ -68,7 +68,7 @@ const unixToDate = unix => {
 
 const weatherInfo = (props) => {
 
-	const { weatherDetails, localHours, clicked } = props;
+	const { weatherDetails, localHours, clicked, reload } = props;
 
 	const { id, sunrise, sunset } = weatherDetails;
 
@@ -100,7 +100,7 @@ const weatherInfo = (props) => {
 					 sunset={sunsetTime}
 					 clicked={clicked} />
 
-			 <Reload/>
+			 <Reload reload={reload}/>
 
 		</Fragment>
 	);

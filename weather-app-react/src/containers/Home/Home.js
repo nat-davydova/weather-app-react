@@ -131,6 +131,8 @@ class Home extends Component{
 		await this.getLocation();
 		await this.getWeather(this.state.location.lat, this.state.location.long);
 
+		console.log('init');
+
 	};
 
 	async componentDidMount() {
@@ -187,7 +189,8 @@ class Home extends Component{
 						weatherContent={weather.details || weather.weatherError}
 						weatherDetails={weather.details}
 						error={weather.weatherError}
-						clicked={() => this.tempUnitsSwitcher(details.temp.value, details.temp.units)}/>
+						clicked={() => this.tempUnitsSwitcher(details.temp.value, details.temp.units)}
+						reload={this.initApp}/>
 
 			</Fragment>
 		);

@@ -9,7 +9,7 @@ import Error from "components/Miscellanious/Error/Error";
 
 const weather = (props) => {
 
-	const { weatherContent, weatherDetails, localHours, error, clicked } = props;
+	const { weatherContent, weatherDetails, localHours, error, clicked, reload } = props;
 
 	const weatherClasses = classnames(
 		'mt-3',
@@ -22,7 +22,8 @@ const weather = (props) => {
 	const weatherInfo = <WeatherInfo localHours={localHours}
 									 weatherDetails={weatherDetails}
 									 error={error}
-									 clicked={clicked}/>;
+									 clicked={clicked}
+									 reload={reload}/>;
 
 	return(
 		<Row>
