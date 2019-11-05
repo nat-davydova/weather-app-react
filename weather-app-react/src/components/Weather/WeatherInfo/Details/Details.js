@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import classes from './Details.module.scss';
 
 const detailsMeasurements = {
-	temp: '°',
+	temp: '°C',
 	wind: 'm/s',
 	pressure: 'hPA',
 	humidity: '%',
