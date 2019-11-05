@@ -105,7 +105,10 @@ class Home extends Component{
 						pressure: baseInfo.pressure,
 						sunrise: time.sunrise,
 						sunset: time.sunset,
-						temp: Math.round(baseInfo.temp),
+						temp: {
+							value: Math.round(baseInfo.temp),
+							units: '°C'
+						},
 						wind: wind.speed,
 					}
 				}

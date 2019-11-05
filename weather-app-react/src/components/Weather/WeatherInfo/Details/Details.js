@@ -7,8 +7,8 @@ import Button from "components/UI/Button/Button";
 
 import classes from './Details.module.scss';
 
-const detailsMeasurements = {
-	temp: '°C',
+const detailsUnits = {
+	temp: '',
 	wind: 'm/s',
 	pressure: 'hPA',
 	humidity: '%',
@@ -41,7 +41,7 @@ const details = (props) => {
 
 	const detailsArr = [];
 
-	for (let [title, measure] of Object.entries(detailsMeasurements)) {
+	for (let [title, units] of Object.entries(detailsUnits)) {
 
 		let newTitle = title.charAt(0).toUpperCase() + title.slice(1);
 
@@ -50,22 +50,24 @@ const details = (props) => {
 		if(title === 'sunrise') {
 
 			arrayItem = <Detail title={newTitle}
-								measure={measure}
+								units={units}
 								value={`${hoursSr}:${minsSr}`}
 								key={uuid()}/>;
 
 		} else if(title === 'sunset') {
 
 			arrayItem = <Detail title={newTitle}
-								measure={measure}
+								units={units}
 								value={`${hoursSt}:${minsSt}`}
 								key={uuid()}/>;
 
 		} else if(title === 'temp') {
 
+			console.log('1');
+
 			arrayItem = <Detail title={newTitle}
-								measure={measure}
-								value={details[title]}
+								units={details.temp.units}
+								value={details.temp.value}
 								key={uuid()}>
 
 				<Button className={btnToFClasses}>F</Button>
@@ -74,7 +76,7 @@ const details = (props) => {
 
 		} else {
 			arrayItem = <Detail title={newTitle}
-								measure={measure}
+								units={units}
 								value={details[title]}
 								key={uuid()}/>;
 		}
