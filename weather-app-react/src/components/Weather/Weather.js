@@ -8,7 +8,7 @@ import WeatherInfo from './WeatherInfo/WeatherInfo';
 
 const weather = (props) => {
 
-	const { weatherContent, weatherDetails, localHours, error } = props;
+	const { weatherContent, weatherDetails, localHours, error, clicked } = props;
 
 	const weatherClasses = classnames(
 		'mt-3',
@@ -20,7 +20,8 @@ const weather = (props) => {
 
 	const weatherInfo = <WeatherInfo localHours={localHours}
 									 weatherDetails={weatherDetails}
-									 error={error}/>;
+									 error={error}
+									 clicked={clicked}/>;
 
 	return(
 		<Row>

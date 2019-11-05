@@ -107,7 +107,7 @@ class Home extends Component{
 						sunset: time.sunset,
 						temp: {
 							value: Math.round(baseInfo.temp),
-							units: '°C'
+							units: 'C'
 						},
 						wind: wind.speed,
 					}
@@ -139,6 +139,28 @@ class Home extends Component{
 
 	}
 
+	tempUnitsSwitcher = () => {
+
+		// let newTemp;
+		//
+		// if(tempUnits === 'C') {
+		// 	newTemp = (tempValue * 9/5) + 32;
+		// } else {
+		// 	newTemp = (tempValue - 32) * 5/9;
+		// }
+
+		console.log('wow');
+
+		// this.setState({
+		// 	weather: {
+		// 		temp: {
+		// 			value: newTemp
+		// 		}
+		// 	}
+		// })
+
+	};
+
 	render() {
 
 		return(
@@ -157,7 +179,8 @@ class Home extends Component{
 			   <Weather localHours={this.state.currentTime.hours}
 						weatherContent={this.state.weather.details || this.state.weather.weatherError}
 						weatherDetails={this.state.weather.details}
-						error={this.state.weather.weatherError}/>
+						error={this.state.weather.weatherError}
+						clicked={this.tempUnitsSwitcher}/>
 
 			</Fragment>
 		);

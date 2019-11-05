@@ -8,7 +8,7 @@ import Button from "components/UI/Button/Button";
 import classes from './Details.module.scss';
 
 const detailsUnits = {
-	temp: '',
+	temp: '°',
 	wind: 'm/s',
 	pressure: 'hPA',
 	humidity: '%',
@@ -18,7 +18,7 @@ const detailsUnits = {
 
 const details = (props) => {
 
-	const { details, sunrise, sunset } = props;
+	const { details, sunrise, sunset, clicked } = props;
 
 	const { hours: hoursSr, mins: minsSr } = sunrise;
 
@@ -63,14 +63,13 @@ const details = (props) => {
 
 		} else if(title === 'temp') {
 
-			console.log('1');
-
 			arrayItem = <Detail title={newTitle}
-								units={details.temp.units}
+								units={`${units}${details.temp.units}`}
 								value={details.temp.value}
 								key={uuid()}>
 
-				<Button className={btnToFClasses}>F</Button>
+				<Button className={btnToFClasses}
+						clicked={clicked}>F</Button>
 
 			</Detail>;
 

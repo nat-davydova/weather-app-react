@@ -68,7 +68,7 @@ const unixToDate = unix => {
 
 const weatherInfo = (props) => {
 
-	const { error, weatherDetails, localHours } = props;
+	const { error, weatherDetails, localHours, clicked } = props;
 
 	const { id, sunrise, sunset } = weatherDetails;
 
@@ -97,13 +97,14 @@ const weatherInfo = (props) => {
 					<Icon weatherType={weatherTitle}
 						  localHours={localHours}
 						  sunriseHours={sunriseTime.hours}
-						  sunsetHours={sunsetTime.hours}/>
+						  sunsetHours={sunsetTime.hours} />
 
-					<Title weatherType={weatherTitle}/>
+					<Title weatherType={weatherTitle} />
 
 					<Details details={weatherDetails}
 							 sunrise={sunriseTime}
-							 sunset={sunsetTime}/>
+							 sunset={sunsetTime}
+							 clicked={clicked} />
 
 				</Fragment>
 
