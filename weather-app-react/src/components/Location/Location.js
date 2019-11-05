@@ -6,6 +6,7 @@ import Col from 'components/Miscellanious/Col/Col';
 import Icon from 'components/Miscellanious/Icon/Icon';
 import Preloader from 'components/Preloader/Preloader';
 import Content from './Content/Content';
+import Error from 'components/Miscellanious/Error/Error';
 
 import { ReactComponent as LocationIcon } from 'assets/img/icons/map-marker.svg';
 
@@ -33,7 +34,11 @@ const location = (props) => {
 						<LocationIcon/>
 					</Icon>
 
-					{ location ? <Content location={location} error={error} /> : <Preloader iconSize={`sm`} color={'text-success'}/> }
+					{ !(location || error) && <Preloader iconSize={`sm`} color={'text-success'}/>}
+
+					{ location && <Content location={location} /> }
+
+					{error && <Error errorText={error}/>}
 
 				</div>
 
