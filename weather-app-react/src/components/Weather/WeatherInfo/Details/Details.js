@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import uuid from 'uuid/v1';
 
 import Detail from './Detail/Detail';
+import Button from "components/UI/Button/Button";
 
 import classes from './Details.module.scss';
 
@@ -22,6 +23,11 @@ const details = (props) => {
 	const { hours: hoursSr, mins: minsSr } = sunrise;
 
 	const { hours: hoursSt, mins: minsSt } = sunset;
+
+	const btnToFClasses = classnames(
+		classes.details_btn,
+		'btn-success'
+	);
 
 	const detailsListClasses = classnames(
 		classes.details_list,
@@ -55,13 +61,22 @@ const details = (props) => {
 								value={`${hoursSt}:${minsSt}`}
 								key={uuid()}/>;
 
-		} else {
+		} else if(title === 'temp') {
 
 			arrayItem = <Detail title={newTitle}
 								measure={measure}
 								value={details[title]}
-								key={uuid()}/>;
+								key={uuid()}>
 
+				<Button className={btnToFClasses}>F</Button>
+
+			</Detail>;
+
+		} else {
+			arrayItem = <Detail title={newTitle}
+								measure={measure}
+								value={details[title]}
+								key={uuid()}/>;
 		}
 
 		detailsArr.push(arrayItem);

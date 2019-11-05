@@ -6,7 +6,7 @@ const button = (props) => {
 	const { children, type, className } = props;
 
 	const btnClasses = classnames(
-		...className,
+		className,
 		'btn'
 	);
 
