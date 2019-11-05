@@ -5,6 +5,7 @@ import Row from 'components/Miscellanious/Row/Row';
 import Col from 'components/Miscellanious/Col/Col';
 import Preloader from 'components/Preloader/Preloader';
 import WeatherInfo from './WeatherInfo/WeatherInfo';
+import Error from "../Miscellanious/Error/Error";
 
 const weather = (props) => {
 
@@ -28,7 +29,11 @@ const weather = (props) => {
 			<Col colWidth={12}>
 				<div className={weatherClasses}>
 
-					{weatherContent ? weatherInfo : <Preloader iconSize={`md`} color={`text-success`}/>}
+					{ !(weatherContent) && <Preloader iconSize={`md`} color={'text-success'}/>}
+
+					{ weatherDetails && weatherInfo }
+
+					{error && <Error errorText={error}/>}
 
 				</div>
 			</Col>

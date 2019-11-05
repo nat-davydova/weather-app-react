@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 
-import Error from 'components/Miscellanious/Error/Error';
 import Icon from './Icon/Icon';
 import Title from './Title/Title';
 import Details from './Details/Details';
@@ -68,7 +67,7 @@ const unixToDate = unix => {
 
 const weatherInfo = (props) => {
 
-	const { error, weatherDetails, localHours, clicked } = props;
+	const { weatherDetails, localHours, clicked } = props;
 
 	const { id, sunrise, sunset } = weatherDetails;
 
@@ -88,27 +87,17 @@ const weatherInfo = (props) => {
 	return(
 		<Fragment>
 
-			{ error && <Error errorText={error}/> }
+			<Icon weatherType={weatherTitle}
+				  localHours={localHours}
+				  sunriseHours={sunriseTime.hours}
+				  sunsetHours={sunsetTime.hours} />
 
-			{weatherDetails &&
+			<Title weatherType={weatherTitle} />
 
-				<Fragment>
-
-					<Icon weatherType={weatherTitle}
-						  localHours={localHours}
-						  sunriseHours={sunriseTime.hours}
-						  sunsetHours={sunsetTime.hours} />
-
-					<Title weatherType={weatherTitle} />
-
-					<Details details={weatherDetails}
-							 sunrise={sunriseTime}
-							 sunset={sunsetTime}
-							 clicked={clicked} />
-
-				</Fragment>
-
-			}
+			<Details details={weatherDetails}
+					 sunrise={sunriseTime}
+					 sunset={sunsetTime}
+					 clicked={clicked} />
 
 		</Fragment>
 	);
