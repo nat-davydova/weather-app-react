@@ -8,6 +8,7 @@ import CurrentDate from 'components/CurrentDate/CurrentDate';
 import CurrentTime from 'components/CurrentTime/CurrentTime';
 import Location from 'components/Location/Location';
 import Weather from 'components/Weather/Weather';
+import details from "../../components/Weather/WeatherInfo/Details/Details";
 
 const timeOptions = {
 	hour12 : false,
@@ -141,24 +142,29 @@ class Home extends Component{
 
 	tempUnitsSwitcher = (tempValue, tempUnits) => {
 
-		let newTemp;
+		let newTemp, newUnits;
 
 		if(tempUnits === 'C') {
 			newTemp = (tempValue * 9/5) + 32;
+			newUnits = 'F';
 		} else {
 			newTemp = (tempValue - 32) * 5/9;
+			newUnits = 'C';
 		}
 
-		console.log(newTemp);
+		this.setState({
+			weather: {
+				details: {
+					...this.state.weather.details,
+					temp: {
+						value: newTemp,
+						units: newUnits
+					}
+				}
+			}
+		});
 
-
-		// this.setState({
-		// 	weather: {
-		// 		temp: {
-		// 			value: newTemp
-		// 		}
-		// 	}
-		// })
+		console.log(this.state.weather.details);
 
 	};
 
@@ -181,7 +187,7 @@ class Home extends Component{
 						weatherContent={this.state.weather.details || this.state.weather.weatherError}
 						weatherDetails={this.state.weather.details}
 						error={this.state.weather.weatherError}
-						clicked={() => this.tempUnitsSwitcher(3, 'C')}/>
+						clicked={() => this.tempUnitsSwitcher(5, 'C')}/>
 
 			</Fragment>
 		);
