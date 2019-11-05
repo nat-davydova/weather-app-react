@@ -163,31 +163,32 @@ class Home extends Component{
 				}
 			}
 		});
-
-		console.log(this.state.weather.details);
-
 	};
 
 	render() {
 
+		const { currentDate, currentTime, location, weather } = this.state;
+
+		const { details } = weather;
+
 		return(
 			<Fragment>
 
-				<CurrentDate day={this.state.currentDate.day}
-							 month={this.state.currentDate.month}
-							 year={this.state.currentDate.year}/>
+				<CurrentDate day={currentDate.day}
+							 month={currentDate.month}
+							 year={currentDate.year}/>
 
-				<CurrentTime hours={this.state.currentTime.hours}
-							 mins={this.state.currentTime.mins}/>
+				<CurrentTime hours={currentTime.hours}
+							 mins={currentTime.mins}/>
 
-				 <Location location={this.state.location.place ? this.state.location.place : this.state.location.locationError}
-						   error={this.state.location.locationError}/>
+				 <Location location={location.place ? location.place : location.locationError}
+						   error={location.locationError}/>
 
-			   <Weather localHours={this.state.currentTime.hours}
-						weatherContent={this.state.weather.details || this.state.weather.weatherError}
-						weatherDetails={this.state.weather.details}
-						error={this.state.weather.weatherError}
-						clicked={() => this.tempUnitsSwitcher(5, 'C')}/>
+			   <Weather localHours={currentTime.hours}
+						weatherContent={weather.details || weather.weatherError}
+						weatherDetails={weather.details}
+						error={weather.weatherError}
+						clicked={() => this.tempUnitsSwitcher(details.temp.value, details.temp.units)}/>
 
 			</Fragment>
 		);
