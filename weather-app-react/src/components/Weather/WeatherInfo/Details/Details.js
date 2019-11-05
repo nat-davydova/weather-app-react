@@ -3,7 +3,20 @@ import classnames from 'classnames';
 
 import classes from './Details.module.scss';
 
+const detailsMeasurements = {
+	temp: '°',
+	wind: 'm/s',
+	pressure: 'hPA',
+	humidity: '%',
+	sunrise: '',
+	sunset: ''
+};
+
 const details = (props) => {
+
+	const { details } = props;
+
+	const { humidity, pressure, sunrise, sunset, temp, wind } = details;
 
 	const detailsListClasses = classnames(
 		classes.details_list,
