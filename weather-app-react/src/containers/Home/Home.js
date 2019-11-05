@@ -139,17 +139,18 @@ class Home extends Component{
 
 	}
 
-	tempUnitsSwitcher = () => {
+	tempUnitsSwitcher = (tempValue, tempUnits) => {
 
-		// let newTemp;
-		//
-		// if(tempUnits === 'C') {
-		// 	newTemp = (tempValue * 9/5) + 32;
-		// } else {
-		// 	newTemp = (tempValue - 32) * 5/9;
-		// }
+		let newTemp;
 
-		console.log('wow');
+		if(tempUnits === 'C') {
+			newTemp = (tempValue * 9/5) + 32;
+		} else {
+			newTemp = (tempValue - 32) * 5/9;
+		}
+
+		console.log(newTemp);
+
 
 		// this.setState({
 		// 	weather: {
@@ -180,7 +181,7 @@ class Home extends Component{
 						weatherContent={this.state.weather.details || this.state.weather.weatherError}
 						weatherDetails={this.state.weather.details}
 						error={this.state.weather.weatherError}
-						clicked={this.tempUnitsSwitcher}/>
+						clicked={() => this.tempUnitsSwitcher(3, 'C')}/>
 
 			</Fragment>
 		);
