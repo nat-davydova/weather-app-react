@@ -128,10 +128,13 @@ class Home extends Component{
 
 	initApp = async () => {
 
+		this.setState({
+			location: {},
+			weather: {}
+		});
+
 		await this.getLocation();
 		await this.getWeather(this.state.location.lat, this.state.location.long);
-
-		console.log('init');
 
 	};
 
