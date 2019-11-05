@@ -101,7 +101,9 @@ const weatherInfo = (props) => {
 
 					<Title weatherType={weatherTitle}/>
 
-					<Details details={weatherDetails}/>
+					<Details details={weatherDetails}
+							 sunrise={sunriseTime}
+							 sunset={sunsetTime}/>
 
 				</Fragment>
 

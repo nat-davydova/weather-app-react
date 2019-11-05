@@ -16,7 +16,11 @@ const detailsMeasurements = {
 
 const details = (props) => {
 
-	const { details } = props;
+	const { details, sunrise, sunset } = props;
+
+	const { hours: hoursSr, mins: minsSr } = sunrise;
+
+	const { hours: hoursSt, mins: minsSt } = sunset;
 
 	const detailsListClasses = classnames(
 		classes.details_list,
@@ -34,7 +38,15 @@ const details = (props) => {
 
 		let newTitle = title.charAt(0).toUpperCase() + title.slice(1);
 
-		let arrayItem = <Detail title={newTitle} measure={measure} value={details[title]}/>;
+		let arrayItem;
+
+		if(title === 'sunrise') {
+			arrayItem = <Detail title={newTitle} measure={measure} value={`${hoursSr}:${minsSr}`}/>;
+		} else if(title === 'sunset') {
+			arrayItem = <Detail title={newTitle} measure={measure} value={`${hoursSt}:${minsSt}`}/>;
+		} else {
+			arrayItem = <Detail title={newTitle} measure={measure} value={details[title]}/>;
+		}
 
 		detailsArr.push(arrayItem);
 	}
