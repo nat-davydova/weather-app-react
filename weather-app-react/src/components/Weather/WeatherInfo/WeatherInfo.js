@@ -53,13 +53,37 @@ const weatherType = idWeather => {
 
 };
 
+//sunset and sunrise from unix into readable date
+const unixToDate = unix => {
+
+	const date = new Date(unix * 1000);
+
+	const hours = date.getHours();
+
+	const mins =  date.getMinutes();
+
+	return [hours,mins];
+
+};
+
 const weatherInfo = (props) => {
 
 	const { error, weatherDetails, localHours } = props;
 
-	const { id } = weatherDetails;
+	const { id, sunrise, sunset } = weatherDetails;
 
 	const weatherTitle = weatherType(id);
+
+	const sunriseTime = {
+		hours: unixToDate(sunrise)[0],
+		mins: unixToDate(sunrise)[1]
+	};
+
+	const sunsetTime = {
+		hours: unixToDate(sunset)[0],
+		mins: unixToDate(sunset)[1]
+	};
+
 
 	return(
 		<Fragment>
@@ -71,7 +95,9 @@ const weatherInfo = (props) => {
 				<Fragment>
 
 					<Icon weatherType={weatherTitle}
-						  localHours={localHours}/>
+						  localHours={localHours}
+						  sunriseHours={sunriseTime.hours}
+						  sunsetHours={sunsetTime.hours}/>
 
 					<Title weatherType={weatherTitle}/>
 

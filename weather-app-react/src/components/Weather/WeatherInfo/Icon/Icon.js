@@ -58,9 +58,9 @@ const weatherTypeFormat = (weather, localHours, sunrise, sunset) => {
 
 const icon = (props) => {
 
-	const { weatherType, localHours } = props;
+	const { weatherType, localHours, sunriseHours, sunsetHours } = props;
 
-	const weather = weatherTypeFormat(weatherType, localHours, 8, 17);
+	const weather = weatherTypeFormat(weatherType, localHours, sunriseHours, sunsetHours);
 
 	return(
 
