@@ -23,6 +23,11 @@ const details = (props) => {
 		'p-0'
 	);
 
+	const detailsClasses = classnames(
+		classes.details,
+		'mt-4'
+	);
+
 	const detailsArr = [];
 
 	for (let [title, measure] of Object.entries(detailsMeasurements)) {
@@ -33,7 +38,7 @@ const details = (props) => {
 	}
 
 	return(
-		<div className="mt-4">
+		<div className={detailsClasses}>
 			<ul className={detailsListClasses}>
 				{detailsArr}
 			</ul>
