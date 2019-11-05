@@ -180,10 +180,10 @@ class Home extends Component{
 				<CurrentTime hours={currentTime.hours}
 							 mins={currentTime.mins}/>
 
-				 <Location location={location.place}
+			    <Location location={location.place}
 						   error={location.locationError}/>
 
-			   <Weather localHours={currentTime.hours}
+				<Weather localHours={currentTime.hours}
 						weatherContent={weather.details || weather.weatherError}
 						weatherDetails={weather.details}
 						error={weather.weatherError}

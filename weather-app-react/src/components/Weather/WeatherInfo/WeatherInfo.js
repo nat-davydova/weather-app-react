@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import Icon from './Icon/Icon';
 import Title from './Title/Title';
 import Details from './Details/Details';
+import Reload from './Reload/Reload';
 
 //rendering weather type from weather ID (got from API)
 const weatherType = idWeather => {
@@ -98,6 +99,8 @@ const weatherInfo = (props) => {
 					 sunrise={sunriseTime}
 					 sunset={sunsetTime}
 					 clicked={clicked} />
+
+			 <Reload/>
 
 		</Fragment>
 	);

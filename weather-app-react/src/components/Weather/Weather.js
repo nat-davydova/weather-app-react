@@ -5,7 +5,7 @@ import Row from 'components/Miscellanious/Row/Row';
 import Col from 'components/Miscellanious/Col/Col';
 import Preloader from 'components/Preloader/Preloader';
 import WeatherInfo from './WeatherInfo/WeatherInfo';
-import Error from "../Miscellanious/Error/Error";
+import Error from "components/Miscellanious/Error/Error";
 
 const weather = (props) => {
 
