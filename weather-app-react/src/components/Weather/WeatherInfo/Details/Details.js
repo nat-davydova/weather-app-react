@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import uuid from 'uuid/v1';
 
 import Detail from './Detail/Detail';
 
@@ -41,11 +42,26 @@ const details = (props) => {
 		let arrayItem;
 
 		if(title === 'sunrise') {
-			arrayItem = <Detail title={newTitle} measure={measure} value={`${hoursSr}:${minsSr}`}/>;
+
+			arrayItem = <Detail title={newTitle}
+								measure={measure}
+								value={`${hoursSr}:${minsSr}`}
+								key={uuid()}/>;
+
 		} else if(title === 'sunset') {
-			arrayItem = <Detail title={newTitle} measure={measure} value={`${hoursSt}:${minsSt}`}/>;
+
+			arrayItem = <Detail title={newTitle}
+								measure={measure}
+								value={`${hoursSt}:${minsSt}`}
+								key={uuid()}/>;
+
 		} else {
-			arrayItem = <Detail title={newTitle} measure={measure} value={details[title]}/>;
+
+			arrayItem = <Detail title={newTitle}
+								measure={measure}
+								value={details[title]}
+								key={uuid()}/>;
+
 		}
 
 		detailsArr.push(arrayItem);

@@ -4,6 +4,7 @@ import Error from 'components/Miscellanious/Error/Error';
 import Icon from './Icon/Icon';
 import Title from './Title/Title';
 import Details from './Details/Details';
+import Button from "components/UI/Button/Button";
 
 //rendering weather type from weather ID (got from API)
 const weatherType = idWeather => {
