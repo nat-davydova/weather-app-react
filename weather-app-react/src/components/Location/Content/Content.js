@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import classnames from 'classnames';
+
+import Error from 'components/Miscellanious/Error/Error';
 
 const content = (props) => {
 
@@ -7,14 +9,18 @@ const content = (props) => {
 
 	const locationClasses = classnames(
 		`flex-shrink-0`,
-		`ml-2`,
-		{
-			[`text-danger`]: error
-		}
+		`ml-2`
 	);
 
 	return (
-		<div className={locationClasses}>{location}</div>
+
+		<Fragment>
+
+			{error && <Error errorText={error}/>}
+
+			{location && <div className={locationClasses}>{location}</div>}
+
+		</Fragment>
 	);
 };
 

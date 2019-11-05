@@ -8,7 +8,6 @@ import CurrentDate from 'components/CurrentDate/CurrentDate';
 import CurrentTime from 'components/CurrentTime/CurrentTime';
 import Location from 'components/Location/Location';
 import Weather from 'components/Weather/Weather';
-import details from "../../components/Weather/WeatherInfo/Details/Details";
 
 const timeOptions = {
 	hour12 : false,
@@ -90,7 +89,7 @@ class Home extends Component{
 	};
 
 	getWeather = async (lat, long) => {
-		
+
 		try {
 
 			const weatherCast = await axiosWeather(`?lat=${lat}&lon=${long}&APPID=${weatherApi}&units=metric`);
@@ -114,7 +113,7 @@ class Home extends Component{
 					}
 				}
 			});
-			
+
 		} catch (e) {
 
 			this.setState({
@@ -145,10 +144,10 @@ class Home extends Component{
 		let newTemp, newUnits;
 
 		if(tempUnits === 'C') {
-			newTemp = (tempValue * 9/5) + 32;
+			newTemp = Math.round((tempValue * 9/5) + 32);
 			newUnits = 'F';
 		} else {
-			newTemp = (tempValue - 32) * 5/9;
+			newTemp = Math.round((tempValue - 32) * 5/9);
 			newUnits = 'C';
 		}
 
@@ -181,7 +180,7 @@ class Home extends Component{
 				<CurrentTime hours={currentTime.hours}
 							 mins={currentTime.mins}/>
 
-				 <Location location={location.place ? location.place : location.locationError}
+				 <Location location={location.place}
 						   error={location.locationError}/>
 
 			   <Weather localHours={currentTime.hours}
