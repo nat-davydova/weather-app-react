@@ -39,6 +39,14 @@ const details = (props) => {
 		'mt-4'
 	);
 
+	let newUnits;
+
+	if(details.temp.units === 'C') {
+		newUnits = 'F';
+	} else {
+		newUnits = 'C';
+	}
+
 	const detailsArr = [];
 
 	for (let [title, units] of Object.entries(detailsUnits)) {
@@ -69,7 +77,7 @@ const details = (props) => {
 								key={uuid()}>
 
 				<Button className={btnToFClasses}
-						clicked={clicked}>F</Button>
+						clicked={clicked}>{newUnits}</Button>
 
 			</Detail>;
 
