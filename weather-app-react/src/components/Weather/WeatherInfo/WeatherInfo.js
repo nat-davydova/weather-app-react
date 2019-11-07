@@ -47,6 +47,10 @@ const weatherType = idWeather => {
 		case(idWeather === 803 || idWeather === 804):
 			weatherType = 'Broken Clouds';
 			break;
+
+		default:
+			weatherType = null;
+			break;
 	}
 
 	return weatherType;
