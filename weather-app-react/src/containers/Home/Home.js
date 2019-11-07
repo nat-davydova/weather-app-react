@@ -9,10 +9,11 @@ import CurrentTime from 'components/CurrentTime/CurrentTime';
 import Location from 'components/Location/Location';
 import Weather from 'components/Weather/Weather';
 
+//time options for date and time
 const timeOptions = {
 	hour12 : false,
 	hour:  "2-digit",
-	minute: "2-digit",
+	minute: "2-digit"
 };
 
 //promise for HTML5 Geolocation API

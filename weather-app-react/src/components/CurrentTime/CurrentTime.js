@@ -8,9 +8,7 @@ import Mins from './Mins/Mins';
 
 import classes from './CurrentTime.module.scss';
 
-const currentTime = (props) => {
-
-	const { hours, mins } = props;
+const currentTime = ({ hours, mins }) => {
 
 	const timeClasses = classnames(
 		classes.time,

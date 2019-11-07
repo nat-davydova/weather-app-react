@@ -1,8 +1,6 @@
 import React from 'react';
 
-const mins = (props) => {
-
-	const { mins } = props;
+const mins = ({ mins }) => {
 
 	return <div className="mins">{mins}</div>;
 

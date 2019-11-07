@@ -2,9 +2,7 @@ import React from 'react';
 
 import classes from './Hours.module.scss';
 
-const hours = (props) => {
-
-	const { hours } = props;
+const hours = ({ hours }) => {
 
 	return <div className={classes.hours}>{hours}</div>;
 
