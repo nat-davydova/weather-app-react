@@ -21,15 +21,20 @@ const getCoords = () => {
 
 class Home extends Component{
 
-	constructor(props) {
+	state = {
+		currentDate: {},
+		currentTime: {},
+		location: {},
+		weather: {}
+	};
 
-		super(props);
+	getDate = () => {
 
 		const fullDate = new Date();
 
 		const time = fullDate.toLocaleTimeString('default', timeOptions).split(':');
 
-		this.state = {
+		this.setState({
 
 			currentDate: {
 				day: fullDate.getDate(),
@@ -40,11 +45,9 @@ class Home extends Component{
 			currentTime: {
 				hours: time[0],
 				mins: time[1],
-			},
+			}
 
-			location: {},
-			weather: {}
-		};
+		});
 	};
 
 	getLocation = async () => {
@@ -128,8 +131,11 @@ class Home extends Component{
 			weather: {}
 		});
 
+		this.getDate();
 		await this.getLocation();
 		await this.getWeather(this.state.location.lat, this.state.location.long);
+
+		console.log(this.state);
 
 	};
 
