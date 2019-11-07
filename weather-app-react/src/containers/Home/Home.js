@@ -3,18 +3,12 @@ import axiosLocation from 'interceptors/axios-location';
 import axiosWeather from 'interceptors/axios-weather';
 
 import { mapApi, weatherApi } from "configs/apiKeys";
+import { timeOptions } from "../../configs/timeOptions";
 
 import CurrentDate from 'components/CurrentDate/CurrentDate';
 import CurrentTime from 'components/CurrentTime/CurrentTime';
 import Location from 'components/Location/Location';
 import Weather from 'components/Weather/Weather';
-
-//time options for date and time
-const timeOptions = {
-	hour12 : false,
-	hour:  "2-digit",
-	minute: "2-digit"
-};
 
 //promise for HTML5 Geolocation API
 const getCoords = () => {

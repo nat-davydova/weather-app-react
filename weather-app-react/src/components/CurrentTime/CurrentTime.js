@@ -8,7 +8,6 @@ import Hours from './Hours/Hours';
 import Mins from './Mins/Mins';
 
 import classes from './CurrentTime.module.scss';
-import currentDate from "../CurrentDate/CurrentDate";
 
 const currentTime = ({ hours, mins }) => {
 
