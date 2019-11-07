@@ -53,14 +53,20 @@ const weatherType = idWeather => {
 
 };
 
+const timeOptions = {
+	hour12 : false,
+	hour:  "2-digit",
+	minute: "2-digit",
+};
+
 //sunset and sunrise from unix into readable date
 const unixToDate = unix => {
 
-	const date = new Date(unix * 1000);
+	const time = new Date(unix * 1000).toLocaleTimeString('default', timeOptions).split(':');
 
-	const hours = date.getHours();
+	const hours = time[0];
 
-	const mins =  date.getMinutes();
+	const mins =  time[1];
 
 	return [hours,mins];
 
