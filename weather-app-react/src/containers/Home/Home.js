@@ -44,6 +44,8 @@ class Home extends Component{
 
 	getLocation = async () => {
 
+		const locationErrorText = `We can't define your location, sorry :(`;
+
 		try {
 
 			const { coords } = await getCoords();
@@ -52,27 +54,38 @@ class Home extends Component{
 
 			const placeObj = await axiosLocation (`?key=${mapApi}&lat=${latitude}&lon=${longitude}&format=json`);
 
-			const { state, country } = placeObj.data.address;
+			if(placeObj) {
 
-			const place = `${state}, ${country}`;
+				const { state, country } = placeObj.data.address;
 
-			this.setState({
-				location: {
-					long: longitude,
-					lat: latitude,
-					place: place
-				}
-			});
+				const place = `${state}, ${country}`;
+
+				this.setState({
+					location: {
+						long: longitude,
+						lat: latitude,
+						place: place,
+					}
+				});
+
+			} else {
+
+				this.setState({
+					location: {
+						locationError: locationErrorText,
+					}
+				});
+
+			}
 
 		} catch (e) {
 			console.log(e);
 
 			this.setState({
 				location: {
-					locationError: `We can't define your location, sorry :(`
+					locationError: locationErrorText,
 				}
 			});
-
 
 		}
 
