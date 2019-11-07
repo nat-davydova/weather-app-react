@@ -138,9 +138,9 @@ class Home extends Component{
 
 	};
 
-	async componentDidMount() {
+	componentDidMount() {
 
-		await this.initApp();
+		this.initApp();
 
 	}
 
