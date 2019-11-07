@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 import Row from 'components/Miscellanious/Row/Row';
 import Col from 'components/Miscellanious/Col/Col';
@@ -9,6 +10,7 @@ import Content from './Content/Content';
 import Error from 'components/Miscellanious/Error/Error';
 
 import { ReactComponent as LocationIcon } from 'assets/img/icons/map-marker.svg';
+import currentTime from "../CurrentTime/CurrentTime";
 
 const location = ({ location, error }) => {
 
@@ -44,6 +46,11 @@ const location = ({ location, error }) => {
 		</Row>
 
 	);
+};
+
+currentTime.propTypes = {
+	location: PropTypes.string,
+	error: PropTypes.string,
 };
 
 export default location;
