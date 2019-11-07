@@ -4,20 +4,12 @@ import axiosWeather from 'interceptors/axios-weather';
 
 import { mapApi, weatherApi } from "configs/apiKeys";
 import { timeOptions } from "../../configs/timeOptions";
+import { getCoords } from "../../utils/geolocation";
 
 import CurrentDate from 'components/CurrentDate/CurrentDate';
 import CurrentTime from 'components/CurrentTime/CurrentTime';
 import Location from 'components/Location/Location';
 import Weather from 'components/Weather/Weather';
-
-//promise for HTML5 Geolocation API
-const getCoords = () => {
-
-	return new Promise(function(resolve, reject) {
-		navigator.geolocation.getCurrentPosition(resolve, reject);
-	});
-
-};
 
 class Home extends Component{
 
