@@ -2,9 +2,7 @@ import React from 'react';
 
 import classes from './Day.module.scss';
 
-const day = (props) => {
-
-	const { day } = props;
+const day = ({ day }) => {
 
 	return <div className={classes.day}>{day}</div>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Row from 'components/Miscellanious/Row/Row';
 import Col from 'components/Miscellanious/Col/Col';
@@ -6,10 +7,8 @@ import Day from './Day/Day';
 import Month from './Month/Month';
 import Year from './Year/Year';
 
-const currentDate = (props) => {
+const currentDate = ({ day, month, year }) => {
 
-	const { day, month, year } = props;
-	
 	return(
 
 		<Row>
@@ -30,6 +29,12 @@ const currentDate = (props) => {
 
 	);
 
+};
+
+currentDate.propTypes = {
+	day: PropTypes.number,
+	month: PropTypes.string,
+	year: PropTypes.number
 };
 
 export default currentDate;

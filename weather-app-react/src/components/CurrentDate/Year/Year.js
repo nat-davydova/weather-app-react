@@ -2,9 +2,7 @@ import React from 'react';
 
 import classes from './Year.module.scss';
 
-const year = (props) => {
-
-	const { year } = props;
+const year = ({ year }) => {
 
 	return <div className={classes.year}>{year}</div>
 

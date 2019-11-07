@@ -2,9 +2,7 @@ import React from 'react';
 
 import classes from './Month.module.scss';
 
-const month = (props) => {
-
-	const { month } = props;
+const month = ({ month }) => {
 
 	return <div className={classes.month}>{month}</div>
 
