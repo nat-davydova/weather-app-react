@@ -3,13 +3,16 @@ import classnames from 'classnames';
 
 import classes from './Frame.module.scss';
 
-const frame = (props) => {
+const frame = ({ children }) => {
 
-	const frameClasses = classnames(classes.frame, `container`);
+	const frameClasses = classnames(
+		classes.frame,
+		`container`
+	);
 
 	return(
 		<div className={frameClasses}>
-			{props.children}
+			{children}
 		</div>
 	);
 };

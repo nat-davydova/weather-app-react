@@ -135,8 +135,6 @@ class Home extends Component{
 		await this.getLocation();
 		await this.getWeather(this.state.location.lat, this.state.location.long);
 
-		console.log(this.state);
-
 	};
 
 	componentDidMount() {
