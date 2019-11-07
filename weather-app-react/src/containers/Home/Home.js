@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import axiosLocation from 'interceptors/axios-location';
 import axiosWeather from 'interceptors/axios-weather';
 
-import { mapApi, weatherApi } from "../../configs/apiKeys";
+import { mapApi, weatherApi } from "configs/apiKeys";
 
 import CurrentDate from 'components/CurrentDate/CurrentDate';
 import CurrentTime from 'components/CurrentTime/CurrentTime';
