@@ -10,9 +10,7 @@ import Error from 'components/Miscellanious/Error/Error';
 
 import { ReactComponent as LocationIcon } from 'assets/img/icons/map-marker.svg';
 
-const location = (props) => {
-
-	const { location, error } = props;
+const location = ({ location, error }) => {
 
 	const locationClasses = classnames(
 		'd-flex',

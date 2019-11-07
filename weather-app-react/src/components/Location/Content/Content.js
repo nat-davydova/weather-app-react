@@ -1,9 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-const content = (props) => {
-
-	const { location } = props;
+const content = ({ location }) => {
 
 	const locationClasses = classnames(
 		`flex-shrink-0`,
