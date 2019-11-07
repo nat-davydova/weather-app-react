@@ -12,7 +12,7 @@ const currentDate = ({ day, month, year }) => {
 	return(
 
 		<Row>
-			<Col colWidth={12}>
+			<Col className="col-12">
 
 				<div className="date text-center d-flex justify-content-center">
 

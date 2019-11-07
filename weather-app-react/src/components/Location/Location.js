@@ -26,7 +26,7 @@ const location = ({ location, error }) => {
 	return(
 
 		<Row>
-			<Col colWidth={12}>
+			<Col className="col-12">
 
 				<div className={locationClasses}>
 

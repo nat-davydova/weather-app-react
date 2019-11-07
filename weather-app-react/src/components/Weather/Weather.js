@@ -27,7 +27,7 @@ const weather = (props) => {
 
 	return(
 		<Row>
-			<Col colWidth={12}>
+			<Col className="col-12">
 				<div className={weatherClasses}>
 
 					{ !(weatherContent) && <Preloader iconSize={`md`} color={'text-success'}/>}

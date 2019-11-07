@@ -20,8 +20,9 @@ const currentTime = ({ hours, mins }) => {
 	);
 
 	return(
+
 		<Row>
-			<Col colWidth={12}>
+			<Col className="col-12">
 
 				<div className={timeClasses}>
 
@@ -33,6 +34,7 @@ const currentTime = ({ hours, mins }) => {
 
 			</Col>
 		</Row>
+
 	);
 
 };
