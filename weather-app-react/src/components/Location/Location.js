@@ -36,9 +36,7 @@ const location = ({ location, error }) => {
 
 					{ !(location || error) && <Preloader iconSize={`sm`} color={'text-success'}/>}
 
-					{ location && <Content location={location} /> }
-
-					{error && <Error errorText={error}/>}
+					{ location ? <Content location={location} /> : <Error errorText={error}/> }
 
 				</div>
 
