@@ -1,9 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-const button = (props) => {
-
-	const { children, type, className, clicked } = props;
+const button = ({ children, type, className, clicked }) => {
 
 	const btnClasses = classnames(
 		className,
