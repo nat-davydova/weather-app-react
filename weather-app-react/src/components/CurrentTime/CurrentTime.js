@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Row from 'components/Miscellanious/Row/Row';
@@ -7,6 +8,7 @@ import Hours from './Hours/Hours';
 import Mins from './Mins/Mins';
 
 import classes from './CurrentTime.module.scss';
+import currentDate from "../CurrentDate/CurrentDate";
 
 const currentTime = ({ hours, mins }) => {
 
@@ -34,6 +36,11 @@ const currentTime = ({ hours, mins }) => {
 		</Row>
 	);
 
+};
+
+currentTime.propTypes = {
+	hours: PropTypes.string,
+	mins: PropTypes.string,
 };
 
 export default currentTime;

@@ -34,7 +34,7 @@ const currentDate = ({ day, month, year }) => {
 currentDate.propTypes = {
 	day: PropTypes.number,
 	month: PropTypes.string,
-	year: PropTypes.number
+	year: PropTypes.number,
 };
 
 export default currentDate;
