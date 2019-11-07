@@ -146,7 +146,7 @@ class Home extends Component{
 
 		this.initApp();
 
-	}
+	};
 
 	tempUnitsSwitcher = (tempValue, tempUnits) => {
 
@@ -173,7 +173,7 @@ class Home extends Component{
 		});
 	};
 
-	render() {
+	render () {
 
 		const { currentDate, currentTime, location, weather } = this.state;
 
@@ -190,7 +190,7 @@ class Home extends Component{
 							 mins={currentTime.mins}/>
 
 			    <Location location={location.place}
-						   error={location.locationError}/>
+						  error={location.locationError}/>
 
 				<Weather localHours={currentTime.hours}
 						weatherContent={weather.details || weather.weatherError}
