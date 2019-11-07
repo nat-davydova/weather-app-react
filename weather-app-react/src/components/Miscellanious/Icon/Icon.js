@@ -3,17 +3,12 @@ import classnames from 'classnames';
 
 import classes from './Icon.module.scss';
 
-const icon = (props) => {
-
-	const { size, children, color } = props;
+const icon = ({ size, children, className }) => {
 
 	const iconClasses = classnames(
 		classes.icon,
 		classes[`icon--${size}`],
-		{
-			[`${color}`]: color
-		}
-
+		className
 	);
 
 	return(

@@ -30,11 +30,11 @@ const location = ({ location, error }) => {
 
 				<div className={locationClasses}>
 
-					<Icon size={'sm'} color={'text-success'}>
+					<Icon size={'sm'} className='text-success'>
 						<LocationIcon/>
 					</Icon>
 
-					{ !(location || error) && <Preloader iconSize={`sm`} color={'text-success'}/>}
+					{ !(location || error) && <Preloader iconSize={`sm`} className='text-success'/>}
 
 					{ location ? <Content location={location} /> : <Error errorText={error}/> }
 
