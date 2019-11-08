@@ -10,5 +10,7 @@ The App Grabs <strong>local date and time</strong>, then - <strong>user's coordi
 
 - React v16.11
 - Bootstrap v4
+- SCSS/CSS3 (including animations)
+- Webpack
 - Responsive (Mobile First Approach)
 - Crossbrowser
