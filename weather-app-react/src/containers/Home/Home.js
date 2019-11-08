@@ -93,6 +93,18 @@ class Home extends Component{
 
 	getWeather = async (lat, long) => {
 
+		const weatherErrorText = `We can't define your weather, sorry :(`;
+
+		if(!(lat && long)) {
+
+			this.setState({
+				weather: {
+					weatherError: weatherErrorText,
+				}
+			});
+
+		}
+
 		try {
 
 			const weatherCast = await axiosWeather(`?lat=${lat}&lon=${long}&APPID=${weatherApi}&units=metric`);
@@ -121,7 +133,7 @@ class Home extends Component{
 
 			this.setState({
 				weather: {
-					weatherError: `We can't define your weather, sorry :(`
+					weatherError: weatherErrorText,
 				}
 			});
 
@@ -129,13 +141,17 @@ class Home extends Component{
 		
 	};
 
-	initApp = async () => {
-
+	cleanState = () => {
 		this.setState({
+			currentDate: {},
+			currentTime: {},
 			location: {},
-			weather: {}
+			weather: {},
 		});
+	};
 
+	initApp = async () => {
+		this.cleanState();
 		this.getDate();
 		await this.getLocation();
 		await this.getWeather(this.state.location.lat, this.state.location.long);
@@ -166,7 +182,7 @@ class Home extends Component{
 					...this.state.weather.details,
 					temp: {
 						value: newTemp,
-						units: newUnits
+						units: newUnits,
 					}
 				}
 			}
@@ -193,8 +209,8 @@ class Home extends Component{
 						  error={location.locationError}/>
 
 				<Weather localHours={currentTime.hours}
-						weatherContent={weather.details || weather.weatherError}
-						weatherDetails={weather.details}
+						weatherContent={details || weather.weatherError}
+						weatherDetails={details}
 						error={weather.weatherError}
 						tempSwitch={() => this.tempUnitsSwitcher(details.temp.value, details.temp.units)}
 						reload={this.initApp}/>
