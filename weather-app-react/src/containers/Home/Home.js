@@ -196,7 +196,7 @@ class Home extends Component{
 						weatherContent={weather.details || weather.weatherError}
 						weatherDetails={weather.details}
 						error={weather.weatherError}
-						clicked={() => this.tempUnitsSwitcher(details.temp.value, details.temp.units)}
+						tempSwitch={() => this.tempUnitsSwitcher(details.temp.value, details.temp.units)}
 						reload={this.initApp}/>
 
 			</Fragment>

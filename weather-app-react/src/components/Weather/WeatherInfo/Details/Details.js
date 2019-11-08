@@ -16,7 +16,7 @@ const detailsUnits = {
 	sunset: ''
 };
 
-const details = ({ details, sunrise, sunset, clicked }) => {
+const details = ({ details, sunrise, sunset, tempSwitch }) => {
 
 	const { hours: hoursSr, mins: minsSr } = sunrise;
 
@@ -75,7 +75,7 @@ const details = ({ details, sunrise, sunset, clicked }) => {
 								key={uuid()}>
 
 				<Button className={btnToFClasses}
-						clicked={clicked}>{newUnits}</Button>
+						clicked={tempSwitch}>{newUnits}</Button>
 
 			</Detail>;
 

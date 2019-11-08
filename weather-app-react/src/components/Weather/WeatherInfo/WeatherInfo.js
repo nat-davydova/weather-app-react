@@ -76,7 +76,7 @@ const unixToDate = unix => {
 
 };
 
-const weatherInfo = ({ weatherDetails, localHours, clicked, reload }) => {
+const weatherInfo = ({ weatherDetails, localHours, tempSwitch, reload }) => {
 
 	const { id, sunrise, sunset } = weatherDetails;
 
@@ -106,7 +106,7 @@ const weatherInfo = ({ weatherDetails, localHours, clicked, reload }) => {
 			<Details details={weatherDetails}
 					 sunrise={sunriseTime}
 					 sunset={sunsetTime}
-					 clicked={clicked} />
+					 tempSwitch={tempSwitch} />
 
 			 <Reload reload={reload}/>
 

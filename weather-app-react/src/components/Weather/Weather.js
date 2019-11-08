@@ -8,7 +8,7 @@ import Preloader from 'components/Preloader/Preloader';
 import WeatherInfo from './WeatherInfo/WeatherInfo';
 import Error from "components/Miscellanious/Error/Error";
 
-const weather = ({ weatherContent, weatherDetails, localHours, error, clicked, reload }) => {
+const weather = ({ weatherContent, weatherDetails, localHours, error, tempSwitch, reload }) => {
 
 	const weatherClasses = classnames(
 		'mt-3',
@@ -21,7 +21,7 @@ const weather = ({ weatherContent, weatherDetails, localHours, error, clicked, r
 	const weatherInfo = <WeatherInfo localHours={localHours}
 									 weatherDetails={weatherDetails}
 									 error={error}
-									 clicked={clicked}
+									 tempSwitch={tempSwitch}
 									 reload={reload}/>;
 
 	return(
