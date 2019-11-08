@@ -72,7 +72,7 @@ const unixToDate = unix => {
 
 	const mins =  time[1];
 
-	return [hours,mins];
+	return {hours, mins};
 
 };
 
@@ -82,16 +82,9 @@ const weatherInfo = ({ weatherDetails, localHours, tempSwitch, reload }) => {
 
 	const weatherTitle = weatherType(id);
 
-	const sunriseTime = {
-		hours: unixToDate(sunrise)[0],
-		mins: unixToDate(sunrise)[1]
-	};
+	const sunriseTime = unixToDate(sunrise);
 
-	const sunsetTime = {
-		hours: unixToDate(sunset)[0],
-		mins: unixToDate(sunset)[1]
-	};
-
+	const sunsetTime = unixToDate(sunset);
 
 	return(
 		<Fragment>
