@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
 import Row from 'components/Miscellanious/Row/Row';
@@ -10,14 +9,6 @@ import Error from "components/Miscellanious/Error/Error";
 
 const weather = ({ weatherContent, weatherDetails, localHours, error, tempSwitch, reload }) => {
 
-	const weatherClasses = classnames(
-		'mt-3',
-		'mt-sm-5',
-		'd-flex',
-		'flex-column',
-		'align-items-center'
-	);
-
 	const weatherInfo = <WeatherInfo localHours={localHours}
 									 weatherDetails={weatherDetails}
 									 error={error}
@@ -27,7 +18,7 @@ const weather = ({ weatherContent, weatherDetails, localHours, error, tempSwitch
 	return(
 		<Row>
 			<Col className="col-12">
-				<div className={weatherClasses}>
+				<div className="mt-3 mt-sm-5 d-flex flex-column align-items-center">
 
 					{ !(weatherContent) && <Preloader iconSize={`md`} className='text-success'/>}
 
