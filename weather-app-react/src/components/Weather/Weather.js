@@ -31,9 +31,7 @@ const weather = ({ weatherContent, weatherDetails, localHours, error, tempSwitch
 
 					{ !(weatherContent) && <Preloader iconSize={`md`} className='text-success'/>}
 
-					{ weatherDetails && weatherInfo }
-
-					{error && <Error errorText={error}/>}
+					{ weatherDetails ? weatherInfo : <Error errorText={error}/>}
 
 				</div>
 			</Col>
