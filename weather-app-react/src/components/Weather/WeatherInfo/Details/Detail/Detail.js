@@ -1,16 +1,12 @@
 import React from 'react';
 
-const detail = (props) => {
+const detail = ({ title, value, units, children }) => (
 
-	const { title, value, units, children } = props;
-
-	return(
-		<li className="detail-item">
-			<strong>{`${title}: `}</strong>
-			<span>{`${value}${units}`}</span>
-			{children}
-		</li>
-	);
-};
+	<li className="detail-item">
+		<strong>{`${title}: `}</strong>
+		<span>{`${value}${units}`}</span>
+		{children}
+	</li>
+);
 
 export default detail;

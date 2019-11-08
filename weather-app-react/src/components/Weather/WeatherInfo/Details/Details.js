@@ -16,9 +16,7 @@ const detailsUnits = {
 	sunset: ''
 };
 
-const details = (props) => {
-
-	const { details, sunrise, sunset, clicked } = props;
+const details = ({ details, sunrise, sunset, clicked }) => {
 
 	const { hours: hoursSr, mins: minsSr } = sunrise;
 

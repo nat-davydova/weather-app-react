@@ -7,10 +7,8 @@ import Preloader from 'components/Preloader/Preloader';
 import WeatherInfo from './WeatherInfo/WeatherInfo';
 import Error from "components/Miscellanious/Error/Error";
 
-const weather = (props) => {
-
-	const { weatherContent, weatherDetails, localHours, error, clicked, reload } = props;
-
+const weather = ({ weatherContent, weatherDetails, localHours, error, clicked, reload }) => {
+	
 	const weatherClasses = classnames(
 		'mt-3',
 		'mt-sm-5',

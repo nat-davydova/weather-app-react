@@ -76,9 +76,7 @@ const unixToDate = unix => {
 
 };
 
-const weatherInfo = (props) => {
-
-	const { weatherDetails, localHours, clicked, reload } = props;
+const weatherInfo = ({ weatherDetails, localHours, clicked, reload }) => {
 
 	const { id, sunrise, sunset } = weatherDetails;
 
