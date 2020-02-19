@@ -8,6 +8,8 @@ The App Grabs <strong>local date and time</strong>, then - <strong>user's coordi
 
 <img src="https://eisenpar.com/weather-app/sample.jpg" width="320" />
 
+### ⚙️ Use `npm start` command to start app locally
+
 - React v16.11
 - Bootstrap v4
 - SCSS/CSS3 (including animations)
